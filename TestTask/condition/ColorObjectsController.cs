@@ -10,6 +10,10 @@ namespace TestTask
             
         }
 
+        private const string Green = "З";
+        private const string Red = "К";
+        private const string Blue = "С";
+
         public List<ColorObject> SortObjects(List<ColorObject> colorObjects, List<string> colorRule)
         {
             CheckInputData(colorObjects, colorRule);
@@ -43,14 +47,14 @@ namespace TestTask
         private void CheckInputData(List<ColorObject> colorObjects, List<string> colorRule)
         {
             colorRule.ForEach(color => {
-                if (!(color.Contains("З") || color.Contains("С") || color.Contains("К")))
+                if (!(color.Contains(Green) || color.Contains(Blue) || color.Contains(Red)))
                     throw new Exception("Ivlalid color");
             });
 
             colorObjects.ForEach(colorObject => {
-                if (!(colorObject.Color.Contains("З")
-                || colorObject.Color.Contains("С")
-                || colorObject.Color.Contains("К")))
+                if (!(colorObject.Color.Contains(Green)
+                || colorObject.Color.Contains(Blue)
+                || colorObject.Color.Contains(Red)))
                     throw new Exception("Invalid color");
 
             });

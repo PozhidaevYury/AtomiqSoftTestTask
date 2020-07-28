@@ -10,9 +10,7 @@ namespace TestTask
         static void Main(string[] args)
         {
             List<ColorObject> colorObjects = InitListOfColorObjects();
-
             colorObjects = GetColorObjectsController().SortObjects(colorObjects, GetColorRule());
-
             WriteSortListOfColorObjects(colorObjects);
         }
     }

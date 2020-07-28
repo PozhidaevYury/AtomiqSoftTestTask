@@ -9,16 +9,20 @@ namespace TestTask
         {
         }
 
+        private const string Green = "З";
+        private const string Red = "К";
+        private const string Blue = "С";
+
         public static List<ColorObject> InitListOfColorObjects()
         {
             List<ColorObject> colorObjects = new List<ColorObject>();
-            colorObjects.Add(new ColorObject() { Color = "К" });
-            colorObjects.Add(new ColorObject() { Color = "С" });
-            colorObjects.Add(new ColorObject() { Color = "С" });
-            colorObjects.Add(new ColorObject() { Color = "З" });
-            colorObjects.Add(new ColorObject() { Color = "К" });
-            colorObjects.Add(new ColorObject() { Color = "С" });
-            colorObjects.Add(new ColorObject() { Color = "З" });
+            colorObjects.Add(new ColorObject() { Color = Red });
+            colorObjects.Add(new ColorObject() { Color = Blue });
+            colorObjects.Add(new ColorObject() { Color = Blue });
+            colorObjects.Add(new ColorObject() { Color = Green });
+            colorObjects.Add(new ColorObject() { Color = Red });
+            colorObjects.Add(new ColorObject() { Color = Blue });
+            colorObjects.Add(new ColorObject() { Color = Green });
             return colorObjects;
         }
 
@@ -34,9 +38,9 @@ namespace TestTask
         {
             List<string> colorRule = new List<string>
         {
-            "З",
-            "С",
-            "К"
+            Green,
+            Red,
+            Blue
         };
             return colorRule;
     }

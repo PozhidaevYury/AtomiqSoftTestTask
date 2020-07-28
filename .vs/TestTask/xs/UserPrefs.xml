@@ -1,10 +1,12 @@
 ﻿<Properties StartupConfiguration="{3A39EC67-D4F2-4F4C-A937-FCC18CA4EA65}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="TestTask/condition/ColorObjectsController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TestTask/Program.cs">
     <Files>
-      <File FileName="TestTask/Program.cs" Line="14" Column="18" />
-      <File FileName="TestTask.Tests/BaseTest.cs" />
+      <File FileName="TestTask/Program.cs" Line="16" Column="55" />
+      <File FileName="TestTask.Tests/BaseTest.cs" Line="68" Column="25" />
       <File FileName="TestTask/condition/Conditions.cs" Line="38" Column="17" />
       <File FileName="TestTask/condition/ColorObjectsController.cs" Line="1" Column="1" />
+      <File FileName="TestTask.Tests/TestTaskTests.cs" Line="1" Column="1" />
+      <File FileName="TestTask/model/ColorObject.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,8 +15,9 @@
             <Node name="TestTask" expanded="True">
               <Node name="condition" expanded="True" />
               <Node name="model" expanded="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
-            <Node name="TestTask.Tests" expanded="True" selected="True" />
+            <Node name="TestTask.Tests" expanded="True" />
           </Node>
         </State>
       </Pad>
