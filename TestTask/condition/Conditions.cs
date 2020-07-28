@@ -35,8 +35,8 @@ namespace TestTask
             List<string> colorRule = new List<string>
         {
             "З",
-            "К",
-            "С"
+            "С",
+            "К"
         };
             return colorRule;
     }
