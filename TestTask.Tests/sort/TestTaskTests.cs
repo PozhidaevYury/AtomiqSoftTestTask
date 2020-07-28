@@ -9,7 +9,7 @@ namespace TestTask.Tests
         [Fact]
         public void MethodIsCorrectWithValidData()
         {
-            BaseTest test = new BaseTest();
+            SortTest test = new SortTest();
 
             test
                 .Setup()
@@ -21,7 +21,7 @@ namespace TestTask.Tests
         [Fact]
         public void MethodIsCorrectWithEmptyList()
         {
-            BaseTest test = new BaseTest();
+            SortTest test = new SortTest();
 
             test
                 .SetupWithEmptyList()
@@ -32,7 +32,7 @@ namespace TestTask.Tests
         [Fact]
         public void MethodIsCorrectWithInvalidColors()
         {
-            BaseTest test = new BaseTest();
+            SortTest test = new SortTest();
 
             test
                 .SetupWithInvalidColors()
@@ -42,7 +42,7 @@ namespace TestTask.Tests
         [Fact]
         public void MethodIsCorrectWithInvalidRule()
         {
-            BaseTest test = new BaseTest();
+            SortTest test = new SortTest();
 
             test
                 .Setup()
@@ -53,7 +53,7 @@ namespace TestTask.Tests
         [Fact]
         public void MethodIsCorrectWithTwoColors()
         {
-            BaseTest test = new BaseTest();
+            SortTest test = new SortTest();
 
             test
                 .SetupWithTwoColors()
@@ -65,7 +65,7 @@ namespace TestTask.Tests
         [Fact]
         public void MethodIsCorrectWithOneColor()
         {
-            BaseTest test = new BaseTest();
+            SortTest test = new SortTest();
 
             test
                 .SetupWithOneColor()
