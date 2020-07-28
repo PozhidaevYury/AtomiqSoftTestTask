@@ -1,0 +1,47 @@
+﻿<Properties StartupConfiguration="{3A39EC67-D4F2-4F4C-A937-FCC18CA4EA65}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TestTask/ColorObjectsController.cs">
+    <Files>
+      <File FileName="TestTask/Program.cs" Line="16" Column="55" />
+      <File FileName="TestTask/ColorObject.cs" Line="9" Column="10" />
+      <File FileName="TestTask/SortColorObjects.cs" Line="18" Column="30" />
+      <File FileName="TestTask.Tests/UnitTest1.cs" Line="49" Column="28" />
+      <File FileName="TestTask/Conditions.cs" Line="20" Column="65" />
+      <File FileName="TestTask.Tests/BaseTest.cs" Line="60" Column="25" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TestTask" expanded="True">
+            <Node name="TestTask" expanded="True">
+              <Node name="ColorObjectsController.cs" selected="True" />
+            </Node>
+            <Node name="TestTask.Tests" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="TestTask" expanded="True">
+            <Node name="TestTask.Tests" expanded="True">
+              <Node name="TestTask.Tests" expanded="True">
+                <Node name="TestTaskTests" expanded="True">
+                  <Node name="MethodIsCorrectWithEmptyList" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.TestTask PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
