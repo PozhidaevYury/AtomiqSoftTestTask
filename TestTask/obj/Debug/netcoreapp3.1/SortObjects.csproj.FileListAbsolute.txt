@@ -1,0 +1,11 @@
+/Users/urij/Projects/TestTask/TestTask/bin/Debug/netcoreapp3.1/SortObjects.deps.json
+/Users/urij/Projects/TestTask/TestTask/bin/Debug/netcoreapp3.1/SortObjects.runtimeconfig.json
+/Users/urij/Projects/TestTask/TestTask/bin/Debug/netcoreapp3.1/SortObjects.runtimeconfig.dev.json
+/Users/urij/Projects/TestTask/TestTask/bin/Debug/netcoreapp3.1/SortObjects.dll
+/Users/urij/Projects/TestTask/TestTask/bin/Debug/netcoreapp3.1/SortObjects.pdb
+/Users/urij/Projects/TestTask/TestTask/obj/Debug/netcoreapp3.1/SortObjects.AssemblyInfoInputs.cache
+/Users/urij/Projects/TestTask/TestTask/obj/Debug/netcoreapp3.1/SortObjects.AssemblyInfo.cs
+/Users/urij/Projects/TestTask/TestTask/obj/Debug/netcoreapp3.1/SortObjects.csproj.CoreCompileInputs.cache
+/Users/urij/Projects/TestTask/TestTask/obj/Debug/netcoreapp3.1/SortObjects.dll
+/Users/urij/Projects/TestTask/TestTask/obj/Debug/netcoreapp3.1/SortObjects.pdb
+/Users/urij/Projects/TestTask/TestTask/obj/Debug/netcoreapp3.1/SortObjects.genruntimeconfig.cache

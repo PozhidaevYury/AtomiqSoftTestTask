@@ -48,14 +48,14 @@ namespace TestTask
         {
             colorRule.ForEach(color => {
                 if (!(color.Contains(Green) || color.Contains(Blue) || color.Contains(Red)))
-                    throw new Exception("Ivlalid color");
+                    throw new Exception("Rule contains incorrect color");
             });
 
             colorObjects.ForEach(colorObject => {
                 if (!(colorObject.Color.Contains(Green)
                 || colorObject.Color.Contains(Blue)
                 || colorObject.Color.Contains(Red)))
-                    throw new Exception("Invalid color");
+                    throw new Exception("Object contatins incorrect color");
 
             });
 

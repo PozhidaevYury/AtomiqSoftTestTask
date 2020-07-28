@@ -8,5 +8,6 @@
   <ItemGroup>
     <Folder Include="model\" />
     <Folder Include="condition\" />
+    <Folder Include="controller\" />
   </ItemGroup>
 </Project>
