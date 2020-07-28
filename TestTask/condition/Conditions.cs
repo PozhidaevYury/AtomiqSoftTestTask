@@ -36,7 +36,7 @@ namespace TestTask
         {
             "З",
             "К",
-            ""
+            "С"
         };
             return colorRule;
     }
