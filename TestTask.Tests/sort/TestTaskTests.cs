@@ -9,9 +9,9 @@ namespace TestTask.Tests
         [Fact]
         public void MethodIsCorrectWithValidData()
         {
-            SortTest test = new SortTest();
+            SortMethod method = new SortMethod();
 
-            test
+            method
                 .Setup()
                 .SetupRule()
                 .Sort()
@@ -21,9 +21,9 @@ namespace TestTask.Tests
         [Fact]
         public void MethodIsCorrectWithEmptyList()
         {
-            SortTest test = new SortTest();
+            SortMethod method = new SortMethod();
 
-            test
+            method
                 .SetupWithEmptyList()
                 .SetupRule()
                 .AssertException();
@@ -32,9 +32,9 @@ namespace TestTask.Tests
         [Fact]
         public void MethodIsCorrectWithInvalidColors()
         {
-            SortTest test = new SortTest();
+            SortMethod method = new SortMethod();
 
-            test
+            method
                 .SetupWithInvalidColors()
                 .AssertException();
         }
@@ -42,20 +42,20 @@ namespace TestTask.Tests
         [Fact]
         public void MethodIsCorrectWithInvalidRule()
         {
-            SortTest test = new SortTest();
+            SortMethod method = new SortMethod();
 
-            test
+            method
                 .Setup()
                 .SetupInvalidRule()
-                .AssertObjects();
+                .AssertException();
         }
 
         [Fact]
         public void MethodIsCorrectWithTwoColors()
         {
-            SortTest test = new SortTest();
+            SortMethod method = new SortMethod();
 
-            test
+            method
                 .SetupWithTwoColors()
                 .SetupRule()
                 .Sort()
@@ -65,9 +65,9 @@ namespace TestTask.Tests
         [Fact]
         public void MethodIsCorrectWithOneColor()
         {
-            SortTest test = new SortTest();
+            SortMethod method = new SortMethod();
 
-            test
+            method
                 .SetupWithOneColor()
                 .SetupRule()
                 .Sort()

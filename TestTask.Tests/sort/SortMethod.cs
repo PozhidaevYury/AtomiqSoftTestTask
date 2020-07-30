@@ -4,9 +4,9 @@ using Xunit;
 
 namespace TestTask.Tests
 {
-    public class SortTest
+    public class SortMethod
     {
-        public SortTest()
+        public SortMethod()
         {
         }
 
@@ -20,7 +20,7 @@ namespace TestTask.Tests
         public List<string> colorRule = new List<string>(3);
         public List<ColorObject> sortObjects = new List<ColorObject>();
 
-        public SortTest Setup()
+        public SortMethod Setup()
         {
             colorObjects.Add(new ColorObject() { Color = Red });
             colorObjects.Add(new ColorObject() { Color = Red });
@@ -45,7 +45,7 @@ namespace TestTask.Tests
             return this;
         }
 
-        public SortTest SetupWithInvalidColors()
+        public SortMethod SetupWithInvalidColors()
         {
             colorObjects.Add(new ColorObject() { Color = Red });
             colorObjects.Add(new ColorObject() { Color = Yellow });
@@ -55,7 +55,7 @@ namespace TestTask.Tests
             return this;
         }
 
-        public SortTest SetupRule()
+        public SortMethod SetupRule()
         {
             colorRule.Add(Green);
             colorRule.Add(Blue);
@@ -63,7 +63,7 @@ namespace TestTask.Tests
             return this;
         }
 
-        public SortTest SetupInvalidRule()
+        public SortMethod SetupInvalidRule()
         {
             colorRule.Add("J");
             colorRule.Add(Blue);
@@ -71,7 +71,7 @@ namespace TestTask.Tests
             return this;
         }
 
-        public SortTest SetupWithTwoColors()
+        public SortMethod SetupWithTwoColors()
         {
             colorObjects.Add(new ColorObject() { Color = Red });
             colorObjects.Add(new ColorObject() { Color = Red });
@@ -90,7 +90,7 @@ namespace TestTask.Tests
             return this;
         }
 
-        public SortTest SetupWithOneColor()
+        public SortMethod SetupWithOneColor()
         {
             colorObjects.Add(new ColorObject() { Color = Red });
             colorObjects.Add(new ColorObject() { Color = Red });
@@ -103,13 +103,13 @@ namespace TestTask.Tests
             return this;
         }
 
-        public SortTest SetupWithEmptyList()
+        public SortMethod SetupWithEmptyList()
         {
             List<ColorObject> colorObjects = new List<ColorObject>();
             return this;
         }
 
-        public SortTest Sort()
+        public SortMethod Sort()
         {
             ColorObjectsController controller = new ColorObjectsController();
             colorObjects = controller.SortObjects(colorObjects, colorRule);
