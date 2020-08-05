@@ -1,13 +1,13 @@
 ﻿<Properties StartupConfiguration="{8BAD5E49-B2AD-49AE-9191-F4AE001D6D66}|Default">
   <MonoDevelop.Ide.ItemProperties.TestTask.Tests PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TestTask/controller/ColorObjectsController.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="TestTask/Program.cs" Line="30" Column="1" />
+      <File FileName="TestTask/Program.cs" Line="51" Column="51" />
       <File FileName="TestTask/model/ColorObject.cs" Line="11" Column="1" />
-      <File FileName="TestTask/controller/ColorObjectsController.cs" Line="113" Column="27" />
+      <File FileName="TestTask/controller/ColorObjectsController.cs" Line="19" Column="44" />
       <File FileName="TestTask.Tests/sort/TestTaskTests.cs" Line="1" Column="1" />
       <File FileName="TestTask.Tests/sort/SortMethod.cs" Line="1" Column="1" />
-      <File FileName="TestTask/ui/UserInterface.cs" Line="60" Column="22" />
+      <File FileName="TestTask/ui/UserInterface.cs" Line="112" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
