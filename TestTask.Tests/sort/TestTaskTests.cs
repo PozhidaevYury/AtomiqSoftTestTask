@@ -12,10 +12,10 @@ namespace TestTask.Tests
             SortMethod method = new SortMethod();
 
             method
-                .Setup()
+                .SetupObjects()
                 .SetupRule()
                 .Sort()
-                .AssertObjects();
+                .AssertSort();
         }
 
         [Fact]
@@ -45,7 +45,7 @@ namespace TestTask.Tests
             SortMethod method = new SortMethod();
 
             method
-                .Setup()
+                .SetupObjects()
                 .SetupInvalidRule()
                 .AssertException();
         }
@@ -59,7 +59,7 @@ namespace TestTask.Tests
                 .SetupWithTwoColors()
                 .SetupRule()
                 .Sort()
-                .AssertObjects();
+                .AssertSort();
         }
 
         [Fact]
@@ -71,7 +71,7 @@ namespace TestTask.Tests
                 .SetupWithOneColor()
                 .SetupRule()
                 .Sort()
-                .AssertObjects();
+                .AssertSort();
         }
        
     }

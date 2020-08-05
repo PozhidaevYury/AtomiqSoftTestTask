@@ -20,7 +20,7 @@ namespace TestTask.Tests
         public List<string> colorRule = new List<string>(3);
         public List<ColorObject> sortObjects = new List<ColorObject>();
 
-        public SortMethod Setup()
+        public SortMethod SetupObjects()
         {
             colorObjects.Add(new ColorObject() { Color = Red });
             colorObjects.Add(new ColorObject() { Color = Red });
@@ -65,7 +65,7 @@ namespace TestTask.Tests
 
         public SortMethod SetupInvalidRule()
         {
-            colorRule.Add("J");
+            colorRule.Add(Yellow);
             colorRule.Add(Blue);
             colorRule.Add("");
             return this;
@@ -122,7 +122,7 @@ namespace TestTask.Tests
             Assert.Throws<Exception>(() => controller.SortObjects(colorObjects, colorRule));
         }
 
-        public void AssertObjects()
+        public void AssertSort()
         {
             Assert.Equal(colorObjects.ToString(), sortObjects.ToString());
         }
