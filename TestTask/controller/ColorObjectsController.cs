@@ -18,7 +18,6 @@ namespace TestTask
         private const string Red = "Red";
         private const string Blue = "Blue";
 
-
         public void AddBlueObject()
         {
             objectList.Add(new ColorObject() { Color = Blue });
@@ -69,22 +68,12 @@ namespace TestTask
 
             if (addedColors.Contains(rule))
             {
-                
+
                 Console.WriteLine("This is color already in use");
                 return false;
                 
             }
-
-            return true;
-                
-        }
-
-        public void ViewColorRule()
-        {
-            colorRule.ForEach(color =>
-            {
-                Console.WriteLine(color);
-            });
+            return true;  
         }
 
         public List<ColorObject> SortObjects()
