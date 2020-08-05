@@ -1,0 +1,11 @@
+/Users/urij/Projects/TestTask/TestTask/bin/Release/netcoreapp3.1/TestTask.deps.json
+/Users/urij/Projects/TestTask/TestTask/bin/Release/netcoreapp3.1/TestTask.runtimeconfig.json
+/Users/urij/Projects/TestTask/TestTask/bin/Release/netcoreapp3.1/TestTask.runtimeconfig.dev.json
+/Users/urij/Projects/TestTask/TestTask/bin/Release/netcoreapp3.1/TestTask.dll
+/Users/urij/Projects/TestTask/TestTask/bin/Release/netcoreapp3.1/TestTask.pdb
+/Users/urij/Projects/TestTask/TestTask/obj/Release/netcoreapp3.1/TestTask.AssemblyInfoInputs.cache
+/Users/urij/Projects/TestTask/TestTask/obj/Release/netcoreapp3.1/TestTask.AssemblyInfo.cs
+/Users/urij/Projects/TestTask/TestTask/obj/Release/netcoreapp3.1/TestTask.csproj.CoreCompileInputs.cache
+/Users/urij/Projects/TestTask/TestTask/obj/Release/netcoreapp3.1/TestTask.dll
+/Users/urij/Projects/TestTask/TestTask/obj/Release/netcoreapp3.1/TestTask.pdb
+/Users/urij/Projects/TestTask/TestTask/obj/Release/netcoreapp3.1/TestTask.genruntimeconfig.cache

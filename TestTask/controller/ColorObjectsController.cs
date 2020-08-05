@@ -5,25 +5,105 @@ namespace TestTask
 {
     public class ColorObjectsController
     {
+
+        public readonly List<ColorObject> objectList = new List<ColorObject>();
+        public readonly List<string> colorRule = new List<string>();
+
         public ColorObjectsController()
         {
             
         }
 
-        private const string Green = "З";
-        private const string Red = "К";
-        private const string Blue = "С";
+        private const string Green = "Green";
+        private const string Red = "Red";
+        private const string Blue = "Blue";
 
-        public List<ColorObject> SortObjects(List<ColorObject> colorObjects, List<string> colorRule)
+
+        public void AddBlueObject()
         {
-            CheckInputData(colorObjects, colorRule);
+            objectList.Add(new ColorObject() { Color = Blue });
+        }
+
+        public void AddRedObject()
+        {
+            objectList.Add(new ColorObject() { Color = Red });
+        }
+
+        public void AddGreenObject()
+        {
+            objectList.Add(new ColorObject() { Color = Green });
+        }
+
+        public void AddColorRule()
+        {
+            colorRule.Clear();
+            List<string> addedColors = new List<string>();
+
+            for(int element = 0; element < 3; element++)
+            {
+                var rule = Console.ReadLine();
+
+                if (!IsValidInputRule(rule, addedColors))
+                {
+                    while (true)
+                    {
+                        rule = Console.ReadLine();
+                        if (IsValidInputRule(rule, addedColors))
+                            break;
+                    }
+                }
+
+                colorRule.Add(rule);
+                addedColors.Add(rule);
+                Console.WriteLine("Color has been added");
+            }
+        }
+
+        private bool IsValidInputRule(string rule, List<string> addedColors)
+        {
+            if (!(rule.Equals(Green) || rule.Equals(Blue) || rule.Equals(Red)))
+            {
+                Console.WriteLine("Incorrect color. Try again.");
+                return false;
+            }
+
+            if (addedColors.Contains(rule))
+            {
+                
+                Console.WriteLine("This is color already in use");
+                return false;
+                
+            }
+
+            return true;
+                
+        }
+
+        public void ViewColorRule()
+        {
+            colorRule.ForEach(color =>
+            {
+                Console.WriteLine(color);
+            });
+        }
+
+        public List<ColorObject> SortObjects()
+        {
+            CheckInputData(objectList, colorRule);
+
+            if (colorRule.Count == 0)
+            {
+                Console.WriteLine("List of rule is empty. Add rule");
+                return null;
+            }
 
             List<ColorObject> lightObjects = new List<ColorObject>();
             List<ColorObject> mediumObjects = new List<ColorObject>();
             List<ColorObject> hardObjects = new List<ColorObject>();
             
-            foreach (ColorObject colorObject in colorObjects)
+            foreach (ColorObject colorObject in objectList)
             {
+
                 if (colorObject.Color.Equals(colorRule[0]))
                 {
                     lightObjects.Add(colorObject);
@@ -37,11 +117,13 @@ namespace TestTask
                     hardObjects.Add(colorObject);
                 }
             }
-            
-            lightObjects.AddRange(mediumObjects);
-            lightObjects.AddRange(hardObjects);
 
-            return lightObjects;
+            objectList.Clear();
+            objectList.AddRange(lightObjects);
+            objectList.AddRange(mediumObjects);
+            objectList.AddRange(hardObjects);
+            
+            return objectList;
         }
 
         private void CheckInputData(List<ColorObject> colorObjects, List<string> colorRule)
@@ -60,7 +142,10 @@ namespace TestTask
             });
 
             if (colorObjects.Count == 0)
-                throw new Exception("List of objects is empty");
+            {
+                Console.WriteLine("List of object is empty. Add some objects");
+                return;
+            }
         }
     }
 }

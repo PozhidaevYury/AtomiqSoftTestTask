@@ -9,7 +9,6 @@ namespace TestTask
         {
         }
 
-        //add enum
         public string Color { get; set; }
     }
 }
