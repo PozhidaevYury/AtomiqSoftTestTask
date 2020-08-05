@@ -118,14 +118,14 @@ namespace TestTask
         private void CheckInputData(List<ColorObject> colorObjects, List<string> colorRule)
         {
             colorRule.ForEach(color => {
-                if (!(color.Contains(Green) || color.Contains(Blue) || color.Contains(Red)))
+                if (!(color.Equals(Green) || color.Equals(Blue) || color.Equals(Red)))
                     throw new Exception("Rule contains incorrect color");
             });
 
             colorObjects.ForEach(colorObject => {
-                if (!(colorObject.Color.Contains(Green)
-                || colorObject.Color.Contains(Blue)
-                || colorObject.Color.Contains(Red)))
+                if (!(colorObject.Color.Equals(Green)
+                || colorObject.Color.Equals(Blue)
+                || colorObject.Color.Equals(Red)))
                     throw new Exception("Object contatins incorrect color");
 
             });

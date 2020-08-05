@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using Xunit;
+using Microsoft.VisualStudio.TestPlatform;
+
 
 namespace TestTask.Tests
 {
@@ -10,27 +13,28 @@ namespace TestTask.Tests
         {
         }
 
-        private const string Green = "З";
-        private const string Red = "К";
-        private const string Blue = "С";
+        private const string Green = "Green";
+        private const string Red = "Red";
+        private const string Blue = "Blue";
 
-        private const string Yellow = "Y";
+        private const string Yellow = "Yellow";
 
-        public List<ColorObject> colorObjects = new List<ColorObject>();
-        public List<string> colorRule = new List<string>(3);
-        public List<ColorObject> sortObjects = new List<ColorObject>();
+        ColorObjectsController controller = new ColorObjectsController();
+        private List<ColorObject> sortObjects = new List<ColorObject>();
 
         public SortMethod SetupObjects()
         {
-            colorObjects.Add(new ColorObject() { Color = Red });
-            colorObjects.Add(new ColorObject() { Color = Red });
-            colorObjects.Add(new ColorObject() { Color = Red });
-            colorObjects.Add(new ColorObject() { Color = Green });
-            colorObjects.Add(new ColorObject() { Color = Green });
-            colorObjects.Add(new ColorObject() { Color = Green });
-            colorObjects.Add(new ColorObject() { Color = Blue });
-            colorObjects.Add(new ColorObject() { Color = Blue });
-            colorObjects.Add(new ColorObject() { Color = Blue });
+            controller.objectList.Clear();
+
+            controller.AddRedObject();
+            controller.AddGreenObject();
+            controller.AddBlueObject();
+            controller.AddBlueObject();
+            controller.AddBlueObject();
+            controller.AddGreenObject();
+            controller.AddGreenObject();
+            controller.AddRedObject();
+            controller.AddRedObject();
 
             sortObjects.Add(new ColorObject() { Color = Green });
             sortObjects.Add(new ColorObject() { Color = Green });
@@ -47,38 +51,37 @@ namespace TestTask.Tests
 
         public SortMethod SetupWithInvalidColors()
         {
-            colorObjects.Add(new ColorObject() { Color = Red });
-            colorObjects.Add(new ColorObject() { Color = Yellow });
-            colorObjects.Add(new ColorObject() { Color = Green });
-            colorObjects.Add(new ColorObject() { Color = Blue });
+            controller.objectList.Add(new ColorObject() { Color = Red });
+            controller.objectList.Add(new ColorObject() { Color = Yellow });
+            controller.objectList.Add(new ColorObject() { Color = Green });
 
             return this;
         }
 
         public SortMethod SetupRule()
         {
-            colorRule.Add(Green);
-            colorRule.Add(Blue);
-            colorRule.Add(Red);
+            controller.colorRule.Add(Green);
+            controller.colorRule.Add(Blue);
+            controller.colorRule.Add(Red);
             return this;
         }
 
         public SortMethod SetupInvalidRule()
         {
-            colorRule.Add(Yellow);
-            colorRule.Add(Blue);
-            colorRule.Add("");
+            controller.colorRule.Add(Yellow);
+            controller.colorRule.Add(Blue);
+            controller.colorRule.Add(Red);
             return this;
         }
 
         public SortMethod SetupWithTwoColors()
         {
-            colorObjects.Add(new ColorObject() { Color = Red });
-            colorObjects.Add(new ColorObject() { Color = Red });
-            colorObjects.Add(new ColorObject() { Color = Red });
-            colorObjects.Add(new ColorObject() { Color = Green });
-            colorObjects.Add(new ColorObject() { Color = Green });
-            colorObjects.Add(new ColorObject() { Color = Green });
+            controller.objectList.Add(new ColorObject() { Color = Red });
+            controller.objectList.Add(new ColorObject() { Color = Red });
+            controller.objectList.Add(new ColorObject() { Color = Red });
+            controller.objectList.Add(new ColorObject() { Color = Green });
+            controller.objectList.Add(new ColorObject() { Color = Green });
+            controller.objectList.Add(new ColorObject() { Color = Green });
 
             sortObjects.Add(new ColorObject() { Color = Green });
             sortObjects.Add(new ColorObject() { Color = Green });
@@ -92,9 +95,9 @@ namespace TestTask.Tests
 
         public SortMethod SetupWithOneColor()
         {
-            colorObjects.Add(new ColorObject() { Color = Red });
-            colorObjects.Add(new ColorObject() { Color = Red });
-            colorObjects.Add(new ColorObject() { Color = Red });
+            controller.objectList.Add(new ColorObject() { Color = Red });
+            controller.objectList.Add(new ColorObject() { Color = Red });
+            controller.objectList.Add(new ColorObject() { Color = Red });
 
             sortObjects.Add(new ColorObject() { Color = Red });
             sortObjects.Add(new ColorObject() { Color = Red });
@@ -105,26 +108,36 @@ namespace TestTask.Tests
 
         public SortMethod SetupWithEmptyList()
         {
-            List<ColorObject> colorObjects = new List<ColorObject>();
+            controller.objectList.Clear();
             return this;
         }
 
         public SortMethod Sort()
         {
-            ColorObjectsController controller = new ColorObjectsController();
-            colorObjects = controller.SortObjects(colorObjects, colorRule);
+            controller.SortObjects();
             return this;
         }
 
-        public void AssertException()
+        public void SortEmptyList()
         {
-            ColorObjectsController controller = new ColorObjectsController();
-            Assert.Throws<Exception>(() => controller.SortObjects(colorObjects, colorRule));
+            var Expected = "List of object is empty. Add some objects";
+
+            var sw = new StringWriter();
+            Console.SetOut(sw);
+            controller.SortObjects();
+
+            var Result = sw.ToString().Trim();
+            Assert.Equal(Expected, Result);
+        }
+
+        public void AssertExceptionSort()
+        {
+            Assert.Throws<Exception>(() => controller.SortObjects());
         }
 
         public void AssertSort()
         {
-            Assert.Equal(colorObjects.ToString(), sortObjects.ToString());
+            Assert.Equal(controller.objectList, sortObjects);
         }
     }
 }

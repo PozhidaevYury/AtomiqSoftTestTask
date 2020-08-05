@@ -10,5 +10,10 @@ namespace TestTask
         }
 
         public string Color { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            return Color == ((ColorObject)obj).Color;
+        }
     }
 }

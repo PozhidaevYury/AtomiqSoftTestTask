@@ -1,6 +1,5 @@
 using System;
 using Xunit;
-using System.Collections.Generic;
 
 namespace TestTask.Tests
 {
@@ -26,47 +25,48 @@ namespace TestTask.Tests
             method
                 .SetupWithEmptyList()
                 .SetupRule()
-                .AssertException();
+                .SortEmptyList();
         }
-
+     
         [Fact]
-        public void MethodIsCorrectWithInvalidColors()
+        public void MethodThrowExceptionWithInvalidColors()
         {
             SortMethod method = new SortMethod();
-
+     
             method
                 .SetupWithInvalidColors()
-                .AssertException();
+                .SetupRule()
+                .AssertExceptionSort();
         }
-
+     
         [Fact]
-        public void MethodIsCorrectWithInvalidRule()
+        public void MethodThrowExceptiontWithInvalidRule()
         {
             SortMethod method = new SortMethod();
-
+     
             method
                 .SetupObjects()
                 .SetupInvalidRule()
-                .AssertException();
+                .AssertExceptionSort();
         }
-
+     
         [Fact]
         public void MethodIsCorrectWithTwoColors()
         {
             SortMethod method = new SortMethod();
-
+     
             method
                 .SetupWithTwoColors()
                 .SetupRule()
                 .Sort()
                 .AssertSort();
         }
-
+     
         [Fact]
         public void MethodIsCorrectWithOneColor()
         {
             SortMethod method = new SortMethod();
-
+     
             method
                 .SetupWithOneColor()
                 .SetupRule()
