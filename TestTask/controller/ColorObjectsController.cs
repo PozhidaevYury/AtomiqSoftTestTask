@@ -68,7 +68,6 @@ namespace TestTask
 
             if (addedColors.Contains(rule))
             {
-
                 Console.WriteLine("This is color already in use");
                 return false;
                 
@@ -121,6 +120,9 @@ namespace TestTask
                 if (!(color.Equals(Green) || color.Equals(Blue) || color.Equals(Red)))
                     throw new Exception("Rule contains incorrect color");
             });
+
+            if (!(colorRule.Contains(Red) && colorRule.Contains(Green) && colorRule.Contains(Blue)))
+                throw new Exception("Rule contains same colors");
 
             colorObjects.ForEach(colorObject => {
                 if (!(colorObject.Color.Equals(Green)

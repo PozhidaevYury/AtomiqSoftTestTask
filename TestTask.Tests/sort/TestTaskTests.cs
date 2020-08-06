@@ -73,6 +73,29 @@ namespace TestTask.Tests
                 .Sort()
                 .AssertSort();
         }
+
+        [Fact]
+        public void MethodThrowEceptionWithSameColorInRule()
+        {
+            SortMethod method = new SortMethod();
+
+            method
+                .SetupObjects()
+                .SetupRuleWithSameColors()
+                .AssertExceptionSort();
+        }
+
+        [Fact]
+        public void MethodIsCorrectWithBigList()
+        {
+            SortMethod method = new SortMethod();
+
+            method
+                .SetupWithBigList()
+                .SetupRule()
+                .Sort()
+                .AssertSort();
+        }
        
     }
 }

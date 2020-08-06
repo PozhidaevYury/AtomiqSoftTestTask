@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using Xunit;
-using Microsoft.VisualStudio.TestPlatform;
 
 
 namespace TestTask.Tests
@@ -49,17 +48,43 @@ namespace TestTask.Tests
             return this;
         }
 
+        public SortMethod SetupWithBigList()
+        {
+            for (int i = 0; i < Int32.MaxValue / 1000; i++)
+            {
+                controller.AddRedObject();
+                controller.AddGreenObject();
+                controller.AddBlueObject();
+            }
+
+            List<ColorObject> blueObjects = new List<ColorObject>();
+            List<ColorObject> redObjects = new List<ColorObject>();
+
+            for (int i = 0; i < Int32.MaxValue / 1000; i++)
+            {
+                sortObjects.Add(new ColorObject() { Color = Green });
+                blueObjects.Add(new ColorObject() { Color = Blue });
+                redObjects.Add(new ColorObject() { Color = Red });
+            }
+
+            sortObjects.AddRange(blueObjects);
+            sortObjects.AddRange(redObjects);
+
+            return this;
+        }
+
         public SortMethod SetupWithInvalidColors()
         {
-            controller.objectList.Add(new ColorObject() { Color = Red });
+            controller.AddRedObject();
             controller.objectList.Add(new ColorObject() { Color = Yellow });
-            controller.objectList.Add(new ColorObject() { Color = Green });
+            controller.AddGreenObject();
 
             return this;
         }
 
         public SortMethod SetupRule()
         {
+            controller.colorRule.Clear();
             controller.colorRule.Add(Green);
             controller.colorRule.Add(Blue);
             controller.colorRule.Add(Red);
@@ -74,14 +99,22 @@ namespace TestTask.Tests
             return this;
         }
 
+        public SortMethod SetupRuleWithSameColors()
+        {
+            controller.colorRule.Add(Blue);
+            controller.colorRule.Add(Blue);
+            controller.colorRule.Add(Red);
+            return this;
+        }
+
         public SortMethod SetupWithTwoColors()
         {
-            controller.objectList.Add(new ColorObject() { Color = Red });
-            controller.objectList.Add(new ColorObject() { Color = Red });
-            controller.objectList.Add(new ColorObject() { Color = Red });
-            controller.objectList.Add(new ColorObject() { Color = Green });
-            controller.objectList.Add(new ColorObject() { Color = Green });
-            controller.objectList.Add(new ColorObject() { Color = Green });
+            controller.AddRedObject();
+            controller.AddRedObject();
+            controller.AddRedObject();
+            controller.AddGreenObject();
+            controller.AddGreenObject();
+            controller.AddGreenObject();
 
             sortObjects.Add(new ColorObject() { Color = Green });
             sortObjects.Add(new ColorObject() { Color = Green });
@@ -95,9 +128,9 @@ namespace TestTask.Tests
 
         public SortMethod SetupWithOneColor()
         {
-            controller.objectList.Add(new ColorObject() { Color = Red });
-            controller.objectList.Add(new ColorObject() { Color = Red });
-            controller.objectList.Add(new ColorObject() { Color = Red });
+            controller.AddRedObject();
+            controller.AddRedObject();
+            controller.AddRedObject();
 
             sortObjects.Add(new ColorObject() { Color = Red });
             sortObjects.Add(new ColorObject() { Color = Red });

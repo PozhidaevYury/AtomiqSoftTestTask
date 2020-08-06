@@ -104,7 +104,7 @@ namespace TestTask.ui
         {
             Console.WriteLine("Rule has been added:");
 
-            foreach (String color in colorRule)
+            foreach (string color in colorRule)
             {
                 Console.Write(color + " ");
             }
