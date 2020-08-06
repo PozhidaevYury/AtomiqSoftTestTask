@@ -56,7 +56,6 @@ namespace TestTask
                         break;
                     case SORT_OBJECT_LIST:
                         controller.SortObjects();
-                        ui.ShowSortDone();
                         break;
                     case VIEW_MENU:
                         ui.WriteInstruction();

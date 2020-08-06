@@ -91,6 +91,12 @@ namespace TestTask.Tests
             return this;
         }
 
+        public SortMethod SetupEmptyRule()
+        {
+            controller.colorRule.Clear();
+            return this;
+        }
+
         public SortMethod SetupInvalidRule()
         {
             controller.colorRule.Add(Yellow);
@@ -154,6 +160,18 @@ namespace TestTask.Tests
         public void SortEmptyList()
         {
             var Expected = "List of object is empty. Add some objects";
+
+            var sw = new StringWriter();
+            Console.SetOut(sw);
+            controller.SortObjects();
+
+            var Result = sw.ToString().Trim();
+            Assert.Equal(Expected, Result);
+        }
+
+        public void SortWithEmptyRule()
+        {
+            var Expected = "List of rule is empty. Add rule";
 
             var sw = new StringWriter();
             Console.SetOut(sw);

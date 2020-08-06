@@ -27,6 +27,17 @@ namespace TestTask.Tests
                 .SetupRule()
                 .SortEmptyList();
         }
+
+        [Fact]
+        public void MethodIsCorrectWithEmptyRule()
+        {
+            SortMethod method = new SortMethod();
+
+            method
+                .SetupObjects()
+                .SetupEmptyRule()
+                .SortWithEmptyRule();
+        }
      
         [Fact]
         public void MethodThrowExceptionWithInvalidColors()

@@ -121,7 +121,7 @@ namespace TestTask
                     throw new Exception("Rule contains incorrect color");
             });
 
-            if (!(colorRule.Contains(Red) && colorRule.Contains(Green) && colorRule.Contains(Blue)))
+            if (colorRule.Count != 0 && !(colorRule.Contains(Red) && colorRule.Contains(Green) && colorRule.Contains(Blue)))
                 throw new Exception("Rule contains same colors");
 
             colorObjects.ForEach(colorObject => {
